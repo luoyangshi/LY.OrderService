@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LY.OrderService</name>
+    </assembly>
+    <members>
+        <member name="M:LY.OrderService.Controllers.HomeController.Index">
+            <summary>
+            Index
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LY.OrderService.Controllers.HomeController.Identity">
+            <summary>
+            获取信息
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
