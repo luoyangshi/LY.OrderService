@@ -91,8 +91,8 @@ namespace LY.OrderService
                 Checks = new[] { httpCheck },
                 ID = Guid.NewGuid().ToString(),
                 Name = Configuration["Service:Name"],
-                Address = Configuration["Consul:IP"],
-                Port = int.Parse(Configuration["Consul:Port"]),
+                Address = Configuration["Service:IP"],
+                Port = int.Parse(Configuration["Service:Port"]),
                 Tags = new[] { $"urlprefix-/{Configuration["Service:Name"]}" } //添加 urlprefix-/servicename 格式的 tag 标签，以便 Fabio 识别
             };
             consulClient.Agent.ServiceRegister(registration).Wait();
