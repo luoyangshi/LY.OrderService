@@ -50,5 +50,14 @@ namespace LY.OrderService.Controllers
         {
             return User.Claims.Select(claim => $"{claim.Type}-----{claim.Value}").ToList();
         }
+
+        /// <summary>
+        /// redis操作
+        /// </summary>
+        [HttpGet("Redis")]
+        public void Redis()
+        {
+            RedisHelper.Set("Test", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+        }
     }
 }

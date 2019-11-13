@@ -8,6 +8,8 @@ using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.Redis;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -61,6 +63,10 @@ namespace LY.OrderService
                     Type = SecuritySchemeType.ApiKey
                 });
             });
+            var csredis = new CSRedis.CSRedisClient(Configuration.GetSection("Redis:Host").Value);
+            RedisHelper.Initialization(csredis);
+            services.AddSingleton<IDistributedCache>(new CSRedisCache(RedisHelper.Instance));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -22,5 +22,10 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:LY.OrderService.Controllers.HomeController.Redis">
+            <summary>
+            redis操作
+            </summary>
+        </member>
     </members>
 </doc>
