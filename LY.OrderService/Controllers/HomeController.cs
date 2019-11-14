@@ -37,7 +37,7 @@ namespace LY.OrderService.Controllers
         [HttpGet("Index")]
         public IEnumerable<string> Index()
         {
-            return new List<string>(){"Home","Index"};
+            return new List<string>() { "Home", "Index" };
         }
 
         /// <summary>

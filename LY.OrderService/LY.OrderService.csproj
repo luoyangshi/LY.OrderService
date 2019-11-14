@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>H:\Code\LY.OrderService\LY.OrderService\xmls\LY.OrderService.xml</DocumentationFile>
+    <DocumentationFile>F:\Test\LY.OrderService\LY.OrderService\xmls\LY.OrderService.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

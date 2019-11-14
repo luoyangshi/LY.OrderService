@@ -49,7 +49,7 @@ namespace LY.OrderService
                     Description = "订单服务",
                 });
                 var basePath = AppContext.BaseDirectory;
-                var xmlPath = Path.Combine(basePath+"//xmls", "LY.OrderService.xml");
+                var xmlPath = Path.Combine(basePath + "//xmls", "LY.OrderService.xml");
                 c.IncludeXmlComments(xmlPath);
 
                 c.OperationFilter<AddResponseHeadersFilter>();
@@ -66,11 +66,10 @@ namespace LY.OrderService
             var csredis = new CSRedis.CSRedisClient(Configuration.GetSection("Redis:Host").Value);
             RedisHelper.Initialization(csredis);
             services.AddSingleton<IDistributedCache>(new CSRedisCache(RedisHelper.Instance));
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, Microsoft.AspNetCore.Hosting.IApplicationLifetime lifetime)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IHostApplicationLifetime lifetime)
         {
             if (env.IsDevelopment())
             {
@@ -104,8 +103,7 @@ namespace LY.OrderService
             consulClient.Agent.ServiceRegister(registration).Wait();
             lifetime.ApplicationStopping.Register(() => { consulClient.Agent.ServiceDeregister(registration.ID).Wait(); }); //服务停止时取消注册
 
-            #endregion
-
+            #endregion consul
 
             app.UseAuthentication();
             app.UseAuthorization();
