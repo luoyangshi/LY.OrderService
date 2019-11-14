@@ -77,8 +77,8 @@ namespace LY.OrderService
             }
 
             app.UseRouting();
-            app.UseSwagger();
-            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/order/swagger.json", "order doc"); });
+            app.UseSwagger(c => { c.RouteTemplate = "/{documentName}/swagger.json"; });
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/order/swagger.json", "order doc"); });
 
             #region consul
 
