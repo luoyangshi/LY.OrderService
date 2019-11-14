@@ -4,6 +4,12 @@
         <name>LY.OrderService</name>
     </assembly>
     <members>
+        <member name="M:LY.OrderService.Controllers.HealthController.Get">
+            <summary>
+            健康检查
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:LY.OrderService.Controllers.HomeController.GetEnvironment">
             <summary>
             获取当前环境变量
@@ -26,6 +32,12 @@
             <summary>
             redis操作
             </summary>
+        </member>
+        <member name="M:LY.OrderService.Controllers.HomeController.GetName">
+            <summary>
+            获取姓名
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

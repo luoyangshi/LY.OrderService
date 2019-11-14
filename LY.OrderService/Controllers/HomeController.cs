@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LY.OrderService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("order/api/[controller]")]
     [ApiController]
     public class HomeController : ControllerBase
     {
