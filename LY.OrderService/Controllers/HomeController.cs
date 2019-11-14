@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LY.OrderService.Controllers
@@ -58,6 +56,16 @@ namespace LY.OrderService.Controllers
         public void Redis()
         {
             RedisHelper.Set("Test", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+        }
+
+        /// <summary>
+        /// 获取姓名
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("GetName")]
+        public string GetName()
+        {
+            return "Hello word";
         }
     }
 }

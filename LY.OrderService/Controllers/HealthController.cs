@@ -11,6 +11,10 @@ namespace LY.OrderService.Controllers
     [ApiController]
     public class HealthController : ControllerBase
     {
+        /// <summary>
+        /// 健康检查
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("")]
         public IActionResult Get() => Ok("ok");
     }
